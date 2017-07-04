@@ -5,7 +5,7 @@ import java.util.Collections;
 /**
  * Created by zemoso on 28/6/17.
  */
-public class vampire {
+public class Vampire {
     public static void main (String args[])
     {
          int count =0;    // declaring count to know how many numbers have been found.
