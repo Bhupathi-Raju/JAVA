@@ -4,7 +4,8 @@ package raju.DefaultInitializationAssignment.data;
  * Created by zemoso on 29/6/17.
  */
 public class Data {
-    private int a,b;
+    private int a;
+    private char b;
     public void print()
     {
         System.out.println(a);

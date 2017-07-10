@@ -7,7 +7,8 @@ public class Singleton {
      private String s;
      public static Singleton getstring(String str)
      {
-         Singleton obj1= new Singleton();
+         Singleton obj1= new Singleton();   // if object of the class is not created, we cannot access Non-static fields from
+          //Static fields.  
          obj1.s = str;
          return obj1;
      }
