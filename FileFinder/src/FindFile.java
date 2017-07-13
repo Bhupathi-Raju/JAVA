@@ -65,7 +65,6 @@ public class FindFile {
         @Override
         public FileVisitResult visitFileFailed(Path file,
                                                IOException exc) {
-            System.err.println("You don't have access to this file/directory: "+file.getFileName());
             return SKIP_SUBTREE;
         }
     }
