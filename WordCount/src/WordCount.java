@@ -39,7 +39,7 @@ public class WordCount {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println("Entered file doesn't exist or u don't have access to it");
         }
     }
 }
