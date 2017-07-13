@@ -2,6 +2,10 @@
  * Created by zemoso on 4/7/17.
  */
 public class ExceptionTest {
+    /**
+     * This is used to repeatedly take inputs from the main class and throw a null pointer exception when a =-1
+     * @param a this is used to pass the value to Exception_Handling
+     */
     public void tester(int a){
         try {
             if(a!=-1) {

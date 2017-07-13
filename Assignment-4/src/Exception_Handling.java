@@ -3,14 +3,19 @@
  * Created by zemoso on 4/7/17.
  */
 public class Exception_Handling {
-       public static void divide (int a) throws Divideby1,DividebyZeroException,DividebyNeagtive
+    /**
+     * @param a a is used to throw exceptions here
+     * @throws DividedByOne this exception is thrown when a =1
+     * @throws DividedByZeroException this exception is thrown when a =0
+     * @throws DividedByNegative this exception is thrown when a < 0
+     */
+        static void divide (int a) throws DividedByOne,DividedByZeroException,DividedByNegative
         {
-            int x = 10;
             if(a==0)
-                throw new DividebyZeroException();
-            else if(a<0)
-                throw new DividebyNeagtive();
+                throw new DividedByZeroException();
+           else if(a<0)
+                throw new DividedByNegative();
             else if(a==1)
-                throw new Divideby1();
+                throw new DividedByOne();
         }
     }
