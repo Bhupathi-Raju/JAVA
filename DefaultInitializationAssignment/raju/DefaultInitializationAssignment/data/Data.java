@@ -14,7 +14,8 @@ public class Data {
     public void print2()
     {
          int c,d;
-         System.out.println(c);
-         System.out.println(d);
+         /*System.out.println(c);    //This code doesn't execute because fields c & d were not initialised
+         System.out.println(d);*/     // Fields inside a class gets initialised automatically but not fields
+                                       // fields in the methods.
     }
 }
