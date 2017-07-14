@@ -110,7 +110,7 @@ import java.util.Scanner;
             Ping p = new Ping("ping -c" + count + " " + websiteAddress,count,websiteAddress);
             ArrayList<Double> timeArray = p.runCommand();
             if(timeArray.size()==0) {
-                System.out.println("auishd");
+                //System.out.println("auishd");
                 System.exit(0);
 
             }
