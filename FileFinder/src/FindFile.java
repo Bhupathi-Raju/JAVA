@@ -11,13 +11,13 @@ import java.util.regex.PatternSyntaxException;
  */
 public class FindFile {
     static int count = 0;
-
     /**
      * This class contains method visitFile which gets called when walkFileTree passes through a file. So for every
      * file it gets called and then we can check whether this path name is equal to the RegExp entered.
      */
     public static class Finder
             extends SimpleFileVisitor<Path> {
+       // File f = new File("input.txt");
         private Pattern p;
         Finder(String pattern) {
             p = Pattern.compile(pattern);
@@ -28,14 +28,13 @@ public class FindFile {
          * @param file takes file name as a string.
          * @return returns the absolute path of the file as a string
          */
-     protected String checkFile(String file)
+     protected String checkFile(Path file)
      {
-         if (p.matcher(file).matches()) {
+         if (p.matcher(file.getFileName().toString()).matches()) {
              count = 1;
-             Path path = Paths.get(file);
-             return (path.toFile().getAbsoluteFile()).toString();
+             return (file.toAbsolutePath()).toString();
          }
-         return "";
+          return "";
      }
 
         /**
@@ -46,12 +45,12 @@ public class FindFile {
          */
         @Override
         public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-            if (file != null)
-            {
-               String fileName = file.getFileName().toString();
-                String filePath = checkFile(fileName);
+            if (file != null) {
+               String filePath =  checkFile(file);
                 if(filePath != "")
+                {
                     System.out.println(filePath);
+            }
             }
             return CONTINUE;
         }
