@@ -1,0 +1,31 @@
+ 1)java.awt.Desktop#getDesktop() (http://docs.oracle.com/javase/8/docs/api/java/awt/Desktop.html#getDesktop--) --- 
+   
+The Design Pattern used here is Singleton Pattern, In singleton pattern we can get only one instance of the object of the class. If we see the implementation of Desktop,
+we can see that Desktop class has a private constructor and we can get only one instance of Desktop throgh getDesktop Method.
+
+
+   private Desktop() {
+        peer = Toolkit.getDefaultToolkit().createDesktopPeer(this);    // This is the private constructor of the desktop class
+    }
+
+  
+        if (desktop == null) {                     // if desktop instance is not created it is creating a new Desktop instance in getDesktop method.
+            desktop = new Desktop();
+            context.put(Desktop.class, desktop);
+        }
+
+        return desktop;
+
+
+
+2)java.util.ResourceBundle#getBundle() (http://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html#getBundle-java.lang.String-)
+
+The Design Pattern implemented here is Factory Design Pattern, In factory design pattern, we create a single object of the required class during runtime by giving it a key(ex : String).
+The ResourceBundle API is used to internationalize the properies such that the program is independent of the locale, It contains the locale specific objects, When we want a locale specific object of the current locale, we can get it by using the ResourceBundle class. It loads the required fields from the properties file of the specified locale at the runtime. So, we are getting the fields stored in the required file during runtime by mentioning the loacle, SO we can say that it is implementing Factory Design Pattern.
+
+3)How does this class HttpServletResponseWrapper (http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletResponseWrapper.html) implement the Decorator pattern.
+
+Decorator pattern is used when want to extend some features to a class without disturbing it's interface. This is called wrapping the objects of the desired calass where we want to add some extra features.
+
+HttpServletResponseWrapper extends ServletResponseWrapper and implements HttpServletResponse.
+ServletResponse Wrapper is a wrapper class for ServletResponse inteface and HttpServletResponse is the sub interface of ServletResponse. HttpServletResponse interface provides a specific HTTP functionality to the ServletResponse and HttpServletResponseWrapper provides extra features to play with this.
